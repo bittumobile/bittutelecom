@@ -7,7 +7,7 @@ import {
   resetPasswordRequest,
   resetPassword,
 } from './authAPI';
-import { updateUser } from '../user/userAPI';
+// import { updateUser } from '../user/userAPI';
 
 const initialState = {
   loggedInUserToken: null, // this should only contain user identity => 'id'/'role'

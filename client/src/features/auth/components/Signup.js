@@ -57,11 +57,11 @@ export default function Signup() {
               <div className="mt-2">
                 <input
                   id="email"
-                  {...register('email', {
-                    required: 'email is required',
+                  {...register("email", {
+                    required: "email is required",
                     pattern: {
-                      value: /\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b/gi,
-                      message: 'email not valid',
+                      value: /\b[\w.-]+@[\w.-]+\.\w{2,4}\b/i,
+                      message: "email not valid",
                     },
                   })}
                   type="email"

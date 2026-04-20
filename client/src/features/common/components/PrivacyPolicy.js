@@ -1,6 +1,5 @@
 function PrivacyPolicyPage() {
-  const company = "Bittu Telecom";
-  const email = "support@bittutelecom.com";
+  const company = "Bittu Telecom"; 
 
   return (
     <div className="bg-gray-900 text-white min-h-screen px-6 py-16">
