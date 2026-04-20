@@ -1,8 +1,9 @@
-export function fetchCount(amount = 1) {
-  return new Promise(async (resolve) =>{
-    const response = await fetch('http://') 
-    const data = await response.json()
-    resolve({data})
-  }
+export async function fetchCount(amount = 1) {
+  const response = await fetch(
+    `${process.env.REACT_APP_API_URL}/api/count?amount=${amount}`
   );
+
+  const data = await response.json();
+
+  return { data: data.value }; 
 }

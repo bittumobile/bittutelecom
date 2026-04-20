@@ -29,7 +29,7 @@ opts.secretOrKey = process.env.JWT_SECRET_KEY;
 
 //middlewares
 
-server.use(express.static(path.resolve(__dirname, 'build')));
+// server.use(express.static(path.resolve(__dirname, 'build')));
 server.use(cookieParser());
 server.use(
   session({
@@ -56,10 +56,12 @@ server.use('/cart', isAuth(), cartRouter.router);
 server.use('/orders', isAuth(), ordersRouter.router);
 
 // this line we add to make react router work in case of other routes doesnt match
-server.get('*', (req, res) =>
-  res.sendFile(path.resolve('build', 'index.html'))
-);
-
+// server.get('*', (req, res) =>
+//   res.sendFile(path.resolve('build', 'index.html'))
+// );
+server.get('/', (req, res) => {
+  res.send('API running on 8080...');
+});
 // Passport Strategies
 passport.use(
   'local',
@@ -138,5 +140,5 @@ async function main() {
 }
 
 server.listen(process.env.PORT, () => {
-  console.log('server started');
+  console.log(`server started ${process.env.PORT}`);
 });
