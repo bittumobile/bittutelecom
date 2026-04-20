@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"; 
+import { useState, useEffect } from "react";
 import { RadioGroup } from "@headlessui/react";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -162,7 +162,7 @@ export default function ProductDetail() {
               </p>
               <p className="text-3xl tracking-tight text-gray-900">
                 ₹{product.discountPrice}
-              </p> 
+              </p>
 
               <form className="mt-10">
                 {/* Colors */}
@@ -209,13 +209,15 @@ export default function ProductDetail() {
                   </div>
                 )}
 
-                <button
-                  onClick={handleCart}
-                  type="submit"
-                  className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                >
-                  Add to Cart
-                </button>
+                {user?.role !== "admin" && (
+                  <button
+                    onClick={handleCart}
+                    type="submit"
+                    className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                  >
+                    Add to Cart
+                  </button>
+                )}
               </form>
             </div>
 
