@@ -36,6 +36,7 @@ server.use(cors({
   exposedHeaders: ['X-Total-Count'],
 }));
 
+server.use(express.json());
 server.use(cookieParser());
 server.use(session({
   secret: process.env.SESSION_KEY,
