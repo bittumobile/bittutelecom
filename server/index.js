@@ -27,24 +27,22 @@ const opts = {};
 opts.jwtFromRequest = cookieExtractor;
 opts.secretOrKey = process.env.JWT_SECRET_KEY; 
 
-//middlewares
+server.use(cors({
+  origin: [
+    "https://bittutelecom.com",
+    "https://www.bittutelecom.com"
+  ],
+  credentials: true,
+  exposedHeaders: ['X-Total-Count'],
+}));
 
-// server.use(express.static(path.resolve(__dirname, 'build')));
 server.use(cookieParser());
-server.use(
-  session({
-    secret: process.env.SESSION_KEY,
-    resave: false, // don't save session if unmodified
-    saveUninitialized: false, // don't create session until something stored
-  })
-);
+server.use(session({
+  secret: process.env.SESSION_KEY,
+  resave: false,
+  saveUninitialized: false,
+}));
 server.use(passport.authenticate('session'));
-server.use(
-  cors({
-    exposedHeaders: ['X-Total-Count'],
-  })
-);
-server.use(express.json()); // to parse req.body
 
 server.use('/products', productsRouter.router);
 server.use('/categories', categoriesRouter.router);
