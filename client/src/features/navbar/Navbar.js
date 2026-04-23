@@ -1,6 +1,6 @@
 import { Fragment, useState } from "react";
 import { Menu, Transition, Dialog } from "@headlessui/react";
-import { 
+import {
   ArrowRightOnRectangleIcon,
   Bars3Icon,
   ClipboardDocumentListIcon,
@@ -8,7 +8,7 @@ import {
   ShoppingCartIcon,
   Squares2X2Icon,
   TruckIcon,
-  UserCircleIcon, 
+  UserCircleIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import { Link, useLocation } from "react-router-dom";
@@ -53,7 +53,6 @@ const getUserNavigation = (isAdmin) => [
     : []),
   { name: "Sign out", link: "/logout", icon: ArrowRightOnRectangleIcon },
 ];
- 
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -109,12 +108,11 @@ export default function NavBar({ children }) {
             )}
 
             <Link to="/" className="flex items-center gap-2">
-              <div className="h-9 w-9 bg-black text-white flex items-center justify-center rounded-lg font-bold">
-                BT
-              </div>
-              <span className="font-semibold text-2xl sm:block">
-                Bittu Telecom
-              </span>
+              <img
+                className="mx-auto h-20 w-auto rounded-lg"
+                src="/logo.jpeg"
+                alt="Your Company"
+              /> 
             </Link>
           </div>
 
@@ -184,16 +182,16 @@ export default function NavBar({ children }) {
                 </Transition>
               </Menu>
             ) : (
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-3">
                 <Link
                   to="/login"
-                  className="flex items-center text-xs text-gray-600 sm:text-sm"
+                  className="flex items-center text-lg text-gray-600"
                 >
                   Login
                 </Link>
                 <Link
                   to="/signup"
-                  className="rounded-lg bg-black px-2.5 py-1.5 text-xs text-white sm:px-3 sm:text-sm"
+                  className="rounded-lg bg-black px-2.5 py-1.5 text-lg text-white"
                 >
                   Signup
                 </Link>

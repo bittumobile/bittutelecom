@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
 import {
   FaInstagram,
-  FaFacebook, 
-  FaXTwitter, 
+  FaFacebook,  
 } from "react-icons/fa6";
 
 function Footer() {
@@ -33,10 +32,7 @@ function Footer() {
               </a>
               <a href={import.meta.env.VITE_SOCIAL_FACEBOOK} target="_blank" rel="noreferrer">
                 <FaFacebook />
-              </a> 
-              <a href={import.meta.env.VITE_SOCIAL_TWITTER} target="_blank" rel="noreferrer">
-                <FaXTwitter />
-              </a>
+              </a>  
             </div>
 
             <div className="flex flex-col gap-2 text-sm">

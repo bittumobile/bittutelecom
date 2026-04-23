@@ -30,7 +30,8 @@ opts.secretOrKey = process.env.JWT_SECRET_KEY;
 server.use(cors({
   origin: [
     "https://bittutelecom.com",
-    "https://www.bittutelecom.com"
+    "https://www.bittutelecom.com",
+    "http://localhost:3000/"
   ],
   credentials: true,
   exposedHeaders: ['X-Total-Count'],
